@@ -51,7 +51,7 @@
 
 - html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和HTML5？
 
-	 
+	  
 		    * HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。
 		          绘画 canvas;
 		          用于媒介回放的 video 和 audio 元素;
@@ -90,7 +90,7 @@
 
 - HTML5的离线储存怎么使用，工作原理能不能解释一下？
 
-	 
+	  
 		    在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件。
 		    原理：HTML5的离线存储是基于一个新建的.appcache文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。
 		
@@ -178,7 +178,7 @@
 
 		        通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;
 		    在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；
-		 
+	  
 
 - 如何在页面上实现一个圆形的可点击区域？
 
@@ -203,136 +203,172 @@
 
 		title属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响；
 		
-				strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<strong>会重读，而<B>是展示强调内容。
+		        strong是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<strong>会重读，而<B>是展示强调内容。
 		
-				i内容展示为斜体，em表示强调的文本；
-				
-				Physical Style Elements -- 自然样式标签
-				b, i, u, s, pre
-				Semantic Style Elements -- 语义样式标签
-				strong, em, ins, del, code
-				应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。
-				
+		        i内容展示为斜体，em表示强调的文本；
+		
+		        Physical Style Elements -- 自然样式标签
+		        b, i, u, s, pre
+		        Semantic Style Elements -- 语义样式标签
+		        strong, em, ins, del, code
+		        应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。
+			 
 
 ## CSS
 
 - 介绍一下标准的CSS的盒子模型？低版本IE的盒子模型有什么不同的？
 
-				（1）有两种， IE 盒子模型、W3C 盒子模型；
-			（2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；
-			（3）区  别： IE的content部分把 border 和 padding计算了进去;
-	
+		        （1）有两种， IE 盒子模型、W3C 盒子模型；
+		    （2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border)；
+		    （3）区  别： IE的content部分把 border 和 padding计算了进去;
+ 
 
 - CSS选择符有哪些？哪些属性可以继承？
 
-				*   1.id选择器（ # myid）
-				2.类选择器（.myclassname）
-				3.标签选择器（div, h1, p）
-				4.相邻选择器（h1 + p）
-				5.子选择器（ul > li）
-				6.后代选择器（li a）
-				7.通配符选择器（ * ）
-				8.属性选择器（a[rel = "external"]）
-				9.伪类选择器（a:hover, li:nth-child）
-	
-			*   可继承的样式： font-size font-family color, UL LI DL DD DT;
-	
-			*   不可继承的样式：border padding margin width height ;
-	
+		        *   1.id选择器（ # myid）
+		        2.类选择器（.myclassname）
+		        3.标签选择器（div, h1, p）
+		        4.相邻选择器（h1 + p）
+		        5.子选择器（ul > li）
+		        6.后代选择器（li a）
+		        7.通配符选择器（ * ）
+		        8.属性选择器（a[rel = "external"]）
+		        9.伪类选择器（a:hover, li:nth-child）
+		
+		    *   可继承的样式： font-size font-family color, UL LI DL DD DT;
+		
+		    *   不可继承的样式：border padding margin width height ;
+ 
 
 - CSS优先级算法如何计算？
 
-				*   优先级就近原则，同权重情况下样式定义最近者为准;
-			*   载入样式以最后载入的定位为准;
-	
-			优先级为:
-				同权重: 内联样式表（标签内部）> 嵌入样式表（当前文件中）> 外部样式表（外部文件中）。
-				!important >  id > class > tag
-				important 比 内联优先级高
+		        *   优先级就近原则，同权重情况下样式定义最近者为准;
+		    *   载入样式以最后载入的定位为准;
+		
+		    优先级为:
+		        同权重: 内联样式表（标签内部）> 嵌入样式表（当前文件中）> 外部样式表（外部文件中）。
+		        !important >  id > class > tag
+		        important 比 内联优先级高
 
 - CSS3新增伪类有那些？
 
-				举例：
-				p:first-of-type	选择属于其父元素的首个 <p> 元素的每个 <p> 元素。
-				p:last-of-type	选择属于其父元素的最后 <p> 元素的每个 <p> 元素。
-		        p:only-of-type	选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。
-				p:only-child		选择属于其父元素的唯一子元素的每个 <p> 元素。
-				p:nth-child(2)	选择属于其父元素的第二个子元素的每个 <p> 元素。
-	
-				:after			在元素之前添加内容,也可以用来做清除浮动。
-				:before			在元素之后添加内容
-		 	    :enabled  		
-				:disabled 		控制表单控件的禁用状态。
-				:checked        单选框或复选框被选中。
+		        举例：
+		        p:first-of-type 选择属于其父元素的首个 <p> 元素的每个 <p> 元素。
+		        p:last-of-type  选择属于其父元素的最后 <p> 元素的每个 <p> 元素。
+		        p:only-of-type  选择属于其父元素唯一的 <p> 元素的每个 <p> 元素。
+		        p:only-child        选择属于其父元素的唯一子元素的每个 <p> 元素。
+		        p:nth-child(2)  选择属于其父元素的第二个子元素的每个 <p> 元素。
+		
+		        :after          在元素之前添加内容,也可以用来做清除浮动。
+		        :before         在元素之后添加内容
+		        :enabled        
+		        :disabled       控制表单控件的禁用状态。
+		        :checked        单选框或复选框被选中。
 
 - **如何居中div？**
 
 	*  水平居中：给div设置一个宽度，然后添加margin:0 auto属性
-	
-				div{
-					width:200px;
-					margin:0 auto;
-				 }
-	
+		 
+			    div{
+			        width:200px;
+			        margin:0 auto;
+			     }
+		 
 		*  让绝对定位的div居中
-	
+			 
 				div {
-					position: absolute;
-					width: 300px;
-					height: 300px;
-					margin: auto;
-					top: 0;
-					left: 0;
-					bottom: 0;
-					right: 0;
-					background-color: pink;	/* 方便看效果 */
+				    position: absolute;
+				    width: 300px;
+				    height: 300px;
+				    margin: auto;
+				    top: 0;
+				    left: 0;
+				    bottom: 0;
+				    right: 0;
+				    background-color: pink; /* 方便看效果 */
 				}
-				
+					 
 		*  水平垂直居中一
-	
+			 
 				确定容器的宽高 宽500 高 300 的层
 				设置层的外边距
-	
+				
 				div {
-					position: relative;		/* 相对定位或绝对定位均可 */
-					width:500px; 
-					height:300px;
-					top: 50%;
-					left: 50%;
-					margin: -150px 0 0 -250px;     	/* 外边距为自身宽高的一半 */
-					background-color: pink;	 	/* 方便看效果 */
-					  
+				    position: relative;     /* 相对定位或绝对定位均可 */
+				    width:500px; 
+				    height:300px;
+				    top: 50%;
+				    left: 50%;
+				    margin: -150px 0 0 -250px;      /* 外边距为自身宽高的一半 */
+				    background-color: pink;     /* 方便看效果 */
+				
 				 }
-	
+		 
 		*  水平垂直居中二
-					
+							 
 				未知容器的宽高，利用 `transform` 属性
 				
 				div {
-					position: absolute;		/* 相对定位或绝对定位均可 */
-					width:500px; 
-					height:300px;
-					top: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
-					background-color: pink;	 	/* 方便看效果 */
-					  
+				    position: absolute;     /* 相对定位或绝对定位均可 */
+				    width:500px; 
+				    height:300px;
+				    top: 50%;
+				    left: 50%;
+				    transform: translate(-50%, -50%);
+				    background-color: pink;     /* 方便看效果 */
+				
 				}
-	
+		 
 		*  水平垂直居中三
-		
+				 
 				利用 flex 布局
 				实际使用时应考虑兼容性
 				
 				.container {
-					display: flex; 
-					align-items: center; 		/* 垂直居中 */
-					justify-content: center;	/* 水平居中 */
-					
+				    display: flex; 
+				    align-items: center;        /* 垂直居中 */
+				    justify-content: center;    /* 水平居中 */
+				
 				}
 				.container div {
-					width: 100px;
-					height: 100px;
-					background-color: pink;		/* 方便看效果 */
+				    width: 100px;
+				    height: 100px;
+				    background-color: pink;     /* 方便看效果 */
 				}  
+
+- display有哪些值？说明他们的作用。
+
+	  block       	块类型。默认宽度为父元素宽度，可设置宽高，换行显示。  
+	  none        	缺省值。象行内元素类型一样显示。
+	  inline      	行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。
+	  inline-block  默认宽度为内容宽度，可以设置宽高，同行显示。
+	  list-item   	象块类型元素一样显示，并添加样式列表标记。
+	  table       	此元素会作为块级表格来显示。
+	  inherit     	规定应该从父元素继承 display 属性的值。
+
+- position的值relative和absolute定位原点是？
+
+				absolute
+					生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。
+				  fixed （老IE不支持）
+					生成绝对定位的元素，相对于浏览器窗口进行定位。
+				  relative
+					生成相对定位的元素，相对于其正常位置进行定位。
+				  static
+					默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。
+				  inherit
+					规定从父元素继承 position 属性的值。
 	
+
+- 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
+
+		一个用于页面布局的全新CSS3功能，Flexbox可以把列表放在同一个方向（从上到下排列，从左到右），并让列表能延伸到占用可用的空间。
+				 较为复杂的布局还可以通过嵌套一个伸缩容器（flex container）来实现。
+				 采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。
+				 它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。
+				 常规布局是基于块和内联流方向，而Flex布局是基于flex-flow流可以很方便的用来做局中，能对不同屏幕大小自适应。
+				 在布局上有了比以前更加灵活的空间。
+		
+				 具体：http://www.w3cplus.com/css3/flexbox-basics.html
+
+
