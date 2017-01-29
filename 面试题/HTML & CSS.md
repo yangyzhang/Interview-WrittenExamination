@@ -335,13 +335,13 @@
 
 - display有哪些值？说明他们的作用。
 
-	  block         块类型。默认宽度为父元素宽度，可设置宽高，换行显示。  
-	  none          缺省值。象行内元素类型一样显示。
-	  inline        行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。
-	  inline-block  默认宽度为内容宽度，可以设置宽高，同行显示。
-	  list-item     象块类型元素一样显示，并添加样式列表标记。
-	  table         此元素会作为块级表格来显示。
-	  inherit       规定应该从父元素继承 display 属性的值。
+	-  block         块类型。默认宽度为父元素宽度，可设置宽高，换行显示。
+	- none          缺省值。象行内元素类型一样显示。
+	- inline        行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。
+	- inline-block  默认宽度为内容宽度，可以设置宽高，同行显示。  
+	- list-item     象块类型元素一样显示，并添加样式列表标记。
+	-  table         此元素会作为块级表格来显示。
+	- inherit       规定应该从父元素继承 display 属性的值。
 
 - position的值relative和absolute定位原点是？
 
@@ -500,6 +500,13 @@
 		- 在谷歌浏览器里，使用collapse值和使用hidden值没有什么区别。 (See this bug report and comments)
 	- 在火狐浏览器、Opera和IE11里，使用collapse值的效果就如它的字面意思：table的行会消失，它的下面一行会补充它的位置。
 
+	display:none与visible:hidden的区别
+	display:none和visible:hidden都能把网页上某个元素隐藏起来，但两者有区别:
+	
+	display:none ---不为被隐藏的对象保留其物理空间，即该对象在页面上彻底消失，通俗来说就是看不见也摸不到。
+	
+	visible:hidden--- 使对象在网页上不可见，但该对象在网页上所占的空间没有改变，通俗来说就是看不见但摸得到。
+
 
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
@@ -567,6 +574,52 @@
 	
 			通过分析发现，除了clear：both用来闭合浮动的，其他代码无非都是为了隐藏掉content生成的内容，这也就是其他版本的闭合浮动为什么会有font-size：0，line-height：0。
 
+- 什么是外边距合并？
+
+		外边距合并指的是，当两个垂直外边距相遇时，它们将形成一个外边距。
+			合并后的外边距的高度等于两个发生合并的外边距的高度中的较大者。
+			w3school介绍网址： http://www.w3school.com.cn/css/css_margin_collapsing.asp
+
+- zoom:1的清除浮动原理?
+
+				清除浮动，触发hasLayout；
+			Zoom属性是IE浏览器的专有属性，它可以设置或检索对象的缩放比例。解决ie下比较奇葩的bug。
+			譬如外边距（margin）的重叠，浮动清除，触发ie的haslayout属性等。
+	
+			来龙去脉大概如下：
+			当设置了zoom的值之后，所设置的元素就会就会扩大或者缩小，高度宽度就会重新计算了，这里一旦改变zoom值时其实也会发生重新渲染，运用这个原理，也就解决了ie下子元素浮动时候父元素不随着自动扩大的问题。
+	
+			Zoom属是IE浏览器的专有属性，火狐和老版本的webkit核心的浏览器都不支持这个属性。然而，zoom现在已经被逐步标准化，出现在 CSS 3.0 规范草案中。
+	
+			目前非ie由于不支持这个属性，它们又是通过什么属性来实现元素的缩放呢？
+			可以通过css3里面的动画属性scale进行缩放。
+	
+
+- 移动端的布局用过媒体查询吗？
+
+	
+		假设你现在正用一台显示设备来阅读这篇文章，同时你也想把它投影到屏幕上，或者打印出来，
+		而显示设备、屏幕投影和打印等这些媒介都有自己的特点，CSS就是为文档提供在不同媒介上展示的适配方法
+	
+		<!-- link元素中的CSS媒体查询 -->
+		当媒体查询为真时，相关的样式表或样式规则会按照正常的级联规被应用。
+		当媒体查询返回假， <link> 标签上带有媒体查询的样式表 仍将被下载 （只不过不会被应用）。
+		
+		<link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
+	
+		<!-- 样式表中的CSS媒体查询 -->
+		包含了一个媒体类型和至少一个使用 宽度、高度和颜色等媒体属性来限制样式表范围的表达式。
+		CSS3加入的媒体查询使得无需修改内容便可以使样式应用于某些特定的设备范围。
+	
+		<style>
+			@media (min-width: 700px) and (orientation: landscape){
+			  .sidebar {
+			    display: none;
+			  }
+			}
+		</style>
+	
+	
 
 [1]:	http://www.cnblogs.com/2050/archive/2012/07/31/2616460.html
 [2]:	http://www.cnblogs.com/jackyWHJ/p/3756087.html
