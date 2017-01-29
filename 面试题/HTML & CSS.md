@@ -51,7 +51,6 @@
 
 - html5有哪些新特性、移除了那些元素？如何处理HTML5新标签的浏览器兼容问题？如何区分 HTML 和HTML5？
 
-	  
 		    * HTML5 现在已经不是 SGML 的子集，主要是关于图像，位置，存储，多任务等功能的增加。
 		          绘画 canvas;
 		          用于媒介回放的 video 和 audio 元素;
@@ -90,7 +89,6 @@
 
 - HTML5的离线储存怎么使用，工作原理能不能解释一下？
 
-	  
 		    在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件。
 		    原理：HTML5的离线存储是基于一个新建的.appcache文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。
 		
@@ -178,7 +176,6 @@
 
 		        通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;
 		    在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放；
-	  
 
 - 如何在页面上实现一个圆形的可点击区域？
 
@@ -212,7 +209,7 @@
 		        Semantic Style Elements -- 语义样式标签
 		        strong, em, ins, del, code
 		        应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。
-			 
+		  
 
 ## CSS
 
@@ -268,14 +265,14 @@
 - **如何居中div？**
 
 	*  水平居中：给div设置一个宽度，然后添加margin:0 auto属性
-		 
+			  
 			    div{
 			        width:200px;
 			        margin:0 auto;
 			     }
-		 
+			  
 		*  让绝对定位的div居中
-			 
+					  
 				div {
 				    position: absolute;
 				    width: 300px;
@@ -287,9 +284,9 @@
 				    right: 0;
 				    background-color: pink; /* 方便看效果 */
 				}
-					 
+						  
 		*  水平垂直居中一
-			 
+					  
 				确定容器的宽高 宽500 高 300 的层
 				设置层的外边距
 				
@@ -303,9 +300,9 @@
 				    background-color: pink;     /* 方便看效果 */
 				
 				 }
-		 
+			  
 		*  水平垂直居中二
-							 
+									  
 				未知容器的宽高，利用 `transform` 属性
 				
 				div {
@@ -318,9 +315,9 @@
 				    background-color: pink;     /* 方便看效果 */
 				
 				}
-		 
+			  
 		*  水平垂直居中三
-				 
+						  
 				利用 flex 布局
 				实际使用时应考虑兼容性
 				
@@ -338,39 +335,241 @@
 
 - display有哪些值？说明他们的作用。
 
-	  block       	块类型。默认宽度为父元素宽度，可设置宽高，换行显示。  
-	  none        	缺省值。象行内元素类型一样显示。
-	  inline      	行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。
+	  block         块类型。默认宽度为父元素宽度，可设置宽高，换行显示。  
+	  none          缺省值。象行内元素类型一样显示。
+	  inline        行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示。
 	  inline-block  默认宽度为内容宽度，可以设置宽高，同行显示。
-	  list-item   	象块类型元素一样显示，并添加样式列表标记。
-	  table       	此元素会作为块级表格来显示。
-	  inherit     	规定应该从父元素继承 display 属性的值。
+	  list-item     象块类型元素一样显示，并添加样式列表标记。
+	  table         此元素会作为块级表格来显示。
+	  inherit       规定应该从父元素继承 display 属性的值。
 
 - position的值relative和absolute定位原点是？
 
-				absolute
-					生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。
-				  fixed （老IE不支持）
-					生成绝对定位的元素，相对于浏览器窗口进行定位。
-				  relative
-					生成相对定位的元素，相对于其正常位置进行定位。
-				  static
-					默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。
-				  inherit
-					规定从父元素继承 position 属性的值。
-	
+		        absolute
+		            生成绝对定位的元素，相对于值不为 static的第一个父元素进行定位。
+		          fixed （老IE不支持）
+		            生成绝对定位的元素，相对于浏览器窗口进行定位。
+		          relative
+		            生成相对定位的元素，相对于其正常位置进行定位。
+		          static
+		            默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right z-index 声明）。
+		          inherit
+		            规定从父元素继承 position 属性的值。
+ 
 
 - 请解释一下CSS3的Flexbox（弹性盒布局模型）,以及适用场景？
 
 		一个用于页面布局的全新CSS3功能，Flexbox可以把列表放在同一个方向（从上到下排列，从左到右），并让列表能延伸到占用可用的空间。
-				 较为复杂的布局还可以通过嵌套一个伸缩容器（flex container）来实现。
-				 采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。
-				 它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。
-				 常规布局是基于块和内联流方向，而Flex布局是基于flex-flow流可以很方便的用来做局中，能对不同屏幕大小自适应。
-				 在布局上有了比以前更加灵活的空间。
+		         较为复杂的布局还可以通过嵌套一个伸缩容器（flex container）来实现。
+		         采用Flex布局的元素，称为Flex容器（flex container），简称"容器"。
+		         它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称"项目"。
+		         常规布局是基于块和内联流方向，而Flex布局是基于flex-flow流可以很方便的用来做局中，能对不同屏幕大小自适应。
+		         在布局上有了比以前更加灵活的空间。
 		
-				 具体：http://www.w3cplus.com/css3/flexbox-basics.html
+		         具体：http://www.w3cplus.com/css3/flexbox-basics.html
 
 
-test
+- 用纯CSS创建一个三角形的原理是什么？
 
+		一个div或者元素的border并不是我们直观意义上的一条有高度的线，而是一个等高梯形或者三角形（宽高为0时）
+		
+		把上、左、右三条边隐藏掉（颜色设为 transparent）
+		        #demo {
+		          width: 0;
+		          height: 0;
+		          border-width: 20px;
+		          border-style: solid;
+		          border-color: transparent transparent red transparent;
+		        }
+
+
+- 一个满屏 品 字布局 如何设计?
+
+		    简单的方式：
+		        上面的div宽100%，
+		        下面的两个div分别宽50%，
+		        然后用float或者inline使其不换行即可
+	 
+- css多列等高如何实现？
+
+	答案来源：[http://www.cnblogs.com/2050/archive/2012/07/31/2616460.html][1]
+
+	- 什么是等高布局?
+
+![][image-1]
+图中的页面的主体内容是两列结构，左列是用来导航的，右列是用来显示内容的。我们看到它们有一个共同的边框，中间还有一条分隔线，左右两列的高度都是不固定的。这种情况下就需要两列的高度保持一致了，左边高度增加，右边也跟着增加，右边高度增加，左边同样也要增加，否则就会出现“断层”的效果。在这里，等高布局是为了维护边框线条的完整性，在有些地方则可能是为了维护背景的完整性，达到整体一致不缺失的效果。
+
+**布局方案**  
+
+等高布局有几种不同的方法，但目前为止我认为浏览器兼容最好最简便的应该是padding补偿法。首先把列的padding-bottom设为一个足够大的值，再把列的margin-bottom设一个与前面的padding-bottom的正值相抵消的负值，父容器设置超出隐藏，这样子父容器的高度就还是它里面的列没有设定padding-bottom时的高度，当它里面的任一列高度增加了，则父容器的高度被撑到它里面最高那列的高度，其他比这列矮的列则会用它们的padding-bottom来补偿这部分高度差。因为背景是可以用在padding占用的空间里的，而且边框也是跟随padding变化的，所以就成功的完成了一个障眼法。
+
+![][image-2]
+
+在进行具体操作的时候，padding-bottom的值大小取决于你的项目的实际情况，如果不确定，设大一点也无所谓。
+
+- 经常遇到的浏览器的兼容性有哪些？原因，解决方法是什么，常用hack的技巧 ？
+
+	* png24位的图片在iE6浏览器上出现背景，解决方案是做成PNG8.
+	
+			* 浏览器默认的margin和padding不同。解决方案是加一个全局的*{margin:0;padding:0;}来统一。
+	
+			* IE6双边距bug:块属性标签float后，又有横行的margin情况下，在ie6显示margin比设置的大。
+	
+			  浮动ie产生的双倍距离 #box{ float:left; width:10px; margin:0 0 0 100px;}
+	
+		      这种情况之下IE会产生20px的距离，解决方案是在float的标签样式控制中加入 ——_display:inline;将其转化为行内属性。(_这个符号只有ie6会识别)
+	
+			  渐进识别的方式，从总体中逐渐排除局部。
+	
+			  首先，巧妙的使用“\9”这一标记，将IE游览器从所有情况中分离出来。
+			  接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
+	
+	          css
+		          .bb{
+			          background-color:red;/*所有识别*/
+				      background-color:#00deff\9; /*IE6、7、8识别*/
+				      +background-color:#a200ff;/*IE6、7识别*/
+				      _background-color:#1e0bd1;/*IE6识别*/
+		          }
+	
+	
+			*  IE下,可以使用获取常规属性的方法来获取自定义属性,
+			   也可以使用getAttribute()获取自定义属性;
+	           Firefox下,只能使用getAttribute()获取自定义属性。
+	           解决方法:统一通过getAttribute()获取自定义属性。
+	
+			*  IE下,even对象有x,y属性,但是没有pageX,pageY属性;
+	           Firefox下,event对象有pageX,pageY属性,但是没有x,y属性。
+	
+			*  解决方法：（条件注释）缺点是在IE浏览器下可能会增加额外的HTTP请求数。
+	
+			*  Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,
+			   可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决。
+	
+			超链接访问过后hover样式就不出现了 被点击访问过的超链接样式不在具有hover和active了解决方法是改变CSS属性的排列顺序:
+		    L-V-H-A :  a:link {} a:visited {} a:hover {} a:active {}
+
+- li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法？
+
+	行框的排列会受到中间空白（回车\空格）等的影响，因为空格也属于字符,这些空白也会被应用样式，占据空间，所以会有间隔，把字符大小设为0，就没有空格了。
+
+- 为什么要初始化CSS样式。
+
+			- 因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
+	
+			- 当然，初始化样式会对SEO有一定的影响，但鱼和熊掌不可兼得，但力求影响最小的情况下初始化。
+	
+			最简单的初始化方法： * {padding: 0; margin: 0;} （强烈不建议）
+	
+			淘宝的样式初始化代码：
+			body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; }
+			body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+			h1, h2, h3, h4, h5, h6{ font-size:100%; }
+			address, cite, dfn, em, var { font-style:normal; }
+			code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+			small{ font-size:12px; }
+			ul, ol { list-style:none; }
+			a { text-decoration:none; }
+			a:hover { text-decoration:underline; }
+			sup { vertical-align:text-top; }
+			sub{ vertical-align:text-bottom; }
+			legend { color:#000; }
+			fieldset, img { border:0; }
+			button, input, select, textarea { font-size:100%; }
+			table { border-collapse:collapse; border-spacing:0; }
+	
+	
+
+- absolute的containing block(容器块)计算方式跟正常流有什么不同？
+
+			无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
+			1、若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域) 的最小矩形；
+			2、否则,则由这个祖先元素的 padding box 构成。
+			如果都找不到，则为 initial containing block。
+	
+			补充：
+			1. static(默认的)/relative：简单说就是它的父元素的内容框（即去掉padding的部分）
+			2. absolute: 向上找最近的定位为absolute/relative的元素
+			3. fixed: 它的containing block一律为根元素(html/body)，根元素也是initial containing block
+
+- CSS里的visibility属性有个collapse属性值是干嘛用的？在不同浏览器下以后什么区别？
+
+	其实visibility可以有第三种值，就是collapse。当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。但例外的是，如果这个元素是table相关的元素，例如table行，table group，table列，table column group，它的表现却跟display: none一样，也就是说，它们占用的空间也会释放。
+	
+	各种浏览器对collapse值的处理方式不一样。
+		- 在谷歌浏览器里，使用collapse值和使用hidden值没有什么区别。 (See this bug report and comments)
+	- 在火狐浏览器、Opera和IE11里，使用collapse值的效果就如它的字面意思：table的行会消失，它的下面一行会补充它的位置。
+
+
+- position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
+
+	[http://www.cnblogs.com/jackyWHJ/p/3756087.html][2]
+
+- css定义的权重
+
+			以下是权重的规则：标签的权重为1，class的权重为10，id的权重为100，以下例子是演示各种定义的权重值：
+	
+			/*权重为1*/
+			div{
+			}
+			/*权重为10*/
+			.class1{
+			}
+			/*权重为100*/
+			#id1{
+			}
+			/*权重为100+1=101*/
+			#id1 div{
+			}
+			/*权重为10+1=11*/
+			.class1 div{
+			}
+			/*权重为10+10+1=21*/
+			.class1 .class2 div{
+			}
+	
+			如果权重相同，则最后定义的样式会起作用，但是应该避免这种情况出现
+	
+
+- 请解释一下为什么需要清除浮动？清除浮动的方式
+
+	清除浮动是为了清除使用浮动元素产生的影响。浮动的元素，高度会塌陷，而高度的塌陷使我们页面后面的布局不能正常显示。
+
+				1、父级div定义height；
+			2、父级div 也一起浮动；
+			3、常规的使用一个class；
+				.clearfix:before, .clearfix:after {
+				    content: " ";
+				    display: table;
+				}
+				.clearfix:after {
+				    clear: both;
+				}
+				.clearfix {
+				    *zoom: 1;
+				}
+	
+			4、SASS编译的时候，浮动元素的父级div定义伪类:after
+				&:after,&:before{
+				    content: " ";
+			        visibility: hidden;
+			        display: block;
+			        height: 0;
+			        clear: both;
+				}
+	
+			解析原理：
+			1) display:block 使生成的元素以块级元素显示,占满剩余空间;
+			2) height:0 避免生成内容破坏原有布局的高度。
+			3) visibility:hidden 使生成的内容不可见，并允许可能被生成内容盖住的内容可以进行点击和交互;
+			4）通过 content:"."生成内容作为最后一个元素，至于content里面是点还是其他都是可以的，例如oocss里面就有经典的 content:".",有些版本可能content 里面内容为空,一丝冰凉是不推荐这样做的,firefox直到7.0 content:”" 仍然会产生额外的空隙；
+			5）zoom：1 触发IE hasLayout。
+	
+			通过分析发现，除了clear：both用来闭合浮动的，其他代码无非都是为了隐藏掉content生成的内容，这也就是其他版本的闭合浮动为什么会有font-size：0，line-height：0。
+
+
+[1]:	http://www.cnblogs.com/2050/archive/2012/07/31/2616460.html
+[2]:	http://www.cnblogs.com/jackyWHJ/p/3756087.html
+
+[image-1]:	1.png
+[image-2]:	2.png
