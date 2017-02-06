@@ -342,6 +342,7 @@
 	- list-item     象块类型元素一样显示，并添加样式列表标记。
 	-  table         此元素会作为块级表格来显示。
 	- inherit       规定应该从父元素继承 display 属性的值。
+	- flex              弹性盒子
 
 - position的值relative和absolute定位原点是？
 
@@ -382,6 +383,8 @@
 		          border-color: transparent transparent red transparent;
 		        }
 
+如何实现的：[http://jingyan.baidu.com/article/08b6a591a3208914a809222f.html][1]
+
 
 - 一个满屏 品 字布局 如何设计?
 
@@ -392,7 +395,7 @@
 	 
 - css多列等高如何实现？
 
-	答案来源：[http://www.cnblogs.com/2050/archive/2012/07/31/2616460.html][1]
+	答案来源：[http://www.cnblogs.com/2050/archive/2012/07/31/2616460.html][2]
 
 	- 什么是等高布局?
 
@@ -510,7 +513,7 @@
 
 - position跟display、margin collapse、overflow、float这些特性相互叠加后会怎么样？
 
-	[http://www.cnblogs.com/jackyWHJ/p/3756087.html][2]
+	[http://www.cnblogs.com/jackyWHJ/p/3756087.html][3]
 
 - css定义的权重
 
@@ -621,8 +624,9 @@
 	
 	
 
-[1]:	http://www.cnblogs.com/2050/archive/2012/07/31/2616460.html
-[2]:	http://www.cnblogs.com/jackyWHJ/p/3756087.html
+[1]:	http://jingyan.baidu.com/article/08b6a591a3208914a809222f.html
+[2]:	http://www.cnblogs.com/2050/archive/2012/07/31/2616460.html
+[3]:	http://www.cnblogs.com/jackyWHJ/p/3756087.html
 
 [image-1]:	1.png
 [image-2]:	2.png
